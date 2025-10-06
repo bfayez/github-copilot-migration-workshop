@@ -1,6 +1,6 @@
 using System;
 
-namespace GreetingsService.Models
+namespace GreetingsConsole.Models
 {
     /// <summary>
     /// Response model matching the MessageService API response

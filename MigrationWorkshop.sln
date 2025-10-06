@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageService", "MessageService\MessageService.csproj", "{8E9F3E21-7C64-4F3A-9B8E-1F5D3E2C4A6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreetingsService", "GreetingsService\GreetingsService.csproj", "{2F6D4B8C-9E7A-4D5C-8B3F-1A2C3D4E5F6A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreetingsConsole", "GreetingsConsole\GreetingsConsole.csproj", "{2F6D4B8C-9E7A-4D5C-8B3F-1A2C3D4E5F6A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

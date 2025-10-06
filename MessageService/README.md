@@ -135,7 +135,7 @@ public IHttpActionResult GetNewEndpoint()
 ## Notes
 
 - The service runs on HTTP (not HTTPS) by default for easier local development
-- CORS is enabled to allow the GreetingsService console application to call the API
+- CORS is enabled to allow the GreetingsConsole console application to call the API
 - The timestamp format is `yyyy-MM-dd HH:mm:ss`
 - Requires .NET Framework 4.8.1 and Windows OS
 - Best developed using Visual Studio 2022 or 2019

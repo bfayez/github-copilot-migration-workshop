@@ -7,13 +7,13 @@ This repository contains a demonstration application consisting of two .NET Fram
 The solution includes two applications:
 
 1. **MessageService** - A REST API service that returns timestamped greeting messages
-2. **GreetingsService** - A console application that calls the MessageService and displays the results
+2. **GreetingsConsole** - A console application that calls the MessageService and displays the results
 
 ## Architecture
 
 ```
 ┌─────────────────────┐          HTTP GET          ┌──────────────────┐
-│  GreetingsService   │ ───────────────────────>  │  MessageService  │
+│  GreetingsConsole   │ ───────────────────────>  │  MessageService  │
 │  (Console App)      │                            │  (REST API)      │
 │                     │ <─────────────────────────  │                  │
 └─────────────────────┘    JSON Response          └──────────────────┘
@@ -50,9 +50,9 @@ The solution includes two applications:
    - The service will start in IIS Express
    - Note the URL where the service is running (should be http://localhost:5000)
 
-3. **Run GreetingsService:**
+3. **Run GreetingsConsole:**
    - Ensure MessageService is still running
-   - Right-click on `GreetingsService` project in Solution Explorer
+   - Right-click on `GreetingsConsole` project in Solution Explorer
    - Select "Debug" → "Start New Instance"
    - A console window will open displaying the greeting message
 
@@ -62,13 +62,13 @@ The solution includes two applications:
    - Right-click on the Solution in Solution Explorer
    - Select "Properties"
    - Choose "Multiple startup projects"
-   - Set both MessageService and GreetingsService to "Start"
+   - Set both MessageService and GreetingsConsole to "Start"
    - Click OK
 
 2. **Start both projects:**
    - Press `F5` or click "Start"
    - MessageService will start in a web browser
-   - GreetingsService will open in a console window
+   - GreetingsConsole will open in a console window
 
 ## Project Structure
 
@@ -93,14 +93,14 @@ github-copilot-migration-workshop/
 │   ├── MessageService.csproj      # Project file
 │   ├── packages.config            # NuGet packages
 │   └── README.md                  # Service-specific documentation
-└── GreetingsService/              # Console Application Project
+└── GreetingsConsole/              # Console Application Project
     ├── Models/
     │   └── MessageResponse.cs     # Response model
     ├── Properties/
     │   └── AssemblyInfo.cs        # Assembly information
     ├── Program.cs                 # Main application logic
     ├── App.config                 # Configuration file
-    ├── GreetingsService.csproj    # Project file
+    ├── GreetingsConsole.csproj    # Project file
     ├── packages.config            # NuGet packages
     └── README.md                  # Application-specific documentation
 ```
@@ -113,7 +113,7 @@ github-copilot-migration-workshop/
 - **Swagger UI:** Available at `http://localhost:5000/swagger`
 - **Port:** 5000 (configurable in project properties)
 
-### GreetingsService Console App
+### GreetingsConsole Console App
 - Connects to MessageService
 - Displays formatted greeting message
 - Error handling for connection issues
@@ -154,8 +154,8 @@ Invoke-RestMethod -Uri http://localhost:5000/api/message
 This project follows .NET naming conventions:
 
 - **Solution:** PascalCase - `MigrationWorkshop.sln`
-- **Projects:** PascalCase - `MessageService`, `GreetingsService`
-- **Namespaces:** PascalCase - `MessageService`, `GreetingsService.Models`
+- **Projects:** PascalCase - `MessageService`, `GreetingsConsole`
+- **Namespaces:** PascalCase - `MessageService`, `GreetingsConsole.Models`
 - **Classes:** PascalCase - `MessageController`, `MessageResponse`
 - **Methods:** PascalCase - `GetMessage`
 - **Properties:** PascalCase - `Message`, `Timestamp`
@@ -171,7 +171,7 @@ Each project includes:
 
 See individual project READMEs for detailed information:
 - [MessageService Documentation](MessageService/README.md)
-- [GreetingsService Documentation](GreetingsService/README.md)
+- [GreetingsConsole Documentation](GreetingsConsole/README.md)
 
 ## Troubleshooting
 
@@ -184,7 +184,7 @@ See individual project READMEs for detailed information:
 - Right-click on Solution → "Restore NuGet Packages"
 - Check your internet connection
 
-### GreetingsService cannot connect
+### GreetingsConsole cannot connect
 - Ensure MessageService is running first
 - Check that MessageService is listening on http://localhost:5000
 - Verify no firewall is blocking the connection

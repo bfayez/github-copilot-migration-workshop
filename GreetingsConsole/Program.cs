@@ -2,12 +2,12 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using GreetingsService.Models;
+using GreetingsConsole.Models;
 
-namespace GreetingsService
+namespace GreetingsConsole
 {
     /// <summary>
-    /// Main program class for the GreetingsService console application
+    /// Main program class for the GreetingsConsole application
     /// </summary>
     class Program
     {
@@ -31,7 +31,7 @@ namespace GreetingsService
         /// <param name="args">Command line arguments</param>
         static async Task MainAsync(string[] args)
         {
-            Console.WriteLine("=== GreetingsService Console Application ===");
+            Console.WriteLine("=== GreetingsConsole Application ===");
             Console.WriteLine($"Connecting to MessageService at: {MessageServiceUrl}");
             Console.WriteLine();
 

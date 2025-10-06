@@ -1,7 +1,7 @@
-# GreetingsService
+# GreetingsConsole
 
 ## Overview
-GreetingsService is a console application built with .NET Framework 4.8.1 that communicates with the MessageService REST API to retrieve and display greeting messages. This application demonstrates how to consume a REST API using HttpClient in .NET Framework.
+GreetingsConsole is a console application built with .NET Framework 4.8.1 that communicates with the MessageService REST API to retrieve and display greeting messages. This application demonstrates how to consume a REST API using HttpClient in .NET Framework.
 
 ## Features
 - Connects to MessageService REST API
@@ -26,7 +26,7 @@ The MessageService must be running before starting this application. See the [Me
 **Method 1: Start New Instance**
 1. Ensure MessageService is already running
 2. Open the `MigrationWorkshop.sln` solution
-3. Right-click on `GreetingsService` project in Solution Explorer
+3. Right-click on `GreetingsConsole` project in Solution Explorer
 4. Select "Debug" → "Start New Instance"
 5. View the output in the console window
 
@@ -34,7 +34,7 @@ The MessageService must be running before starting this application. See the [Me
 1. Right-click on the Solution in Solution Explorer
 2. Select "Properties"
 3. Choose "Multiple startup projects"
-4. Set both MessageService and GreetingsService to "Start"
+4. Set both MessageService and GreetingsConsole to "Start"
 5. Click OK
 6. Press `F5` to start both projects
 
@@ -42,12 +42,12 @@ The MessageService must be running before starting this application. See the [Me
 
 1. **Build the project:**
    ```cmd
-   msbuild GreetingsService.csproj /p:Configuration=Release
+   msbuild GreetingsConsole.csproj /p:Configuration=Release
    ```
 
 2. **Run the executable:**
    ```cmd
-   bin\Release\GreetingsService.exe
+   bin\Release\GreetingsConsole.exe
    ```
 
 ## Expected Output
@@ -55,7 +55,7 @@ The MessageService must be running before starting this application. See the [Me
 When the application runs successfully, you should see output similar to:
 
 ```
-=== GreetingsService Console Application ===
+=== GreetingsConsole Console Application ===
 Connecting to MessageService at: http://localhost:5000
 
 Calling /api/message endpoint...
@@ -99,14 +99,14 @@ To change the service URL, modify this constant and rebuild the application.
 ## Project Structure
 
 ```
-GreetingsService/
+GreetingsConsole/
 ├── Models/
 │   └── MessageResponse.cs      # Data model for API response
 ├── Properties/
 │   └── AssemblyInfo.cs         # Assembly metadata
 ├── Program.cs                  # Main application entry point
 ├── App.config                  # Application configuration
-├── GreetingsService.csproj     # Project file
+├── GreetingsConsole.csproj     # Project file
 ├── packages.config             # NuGet package references
 └── README.md                   # This file
 ```
@@ -115,11 +115,11 @@ GreetingsService/
 
 ### Building the Project
 In Visual Studio:
-1. Build → Build GreetingsService
+1. Build → Build GreetingsConsole
 2. Or press `Ctrl+Shift+B`
 
 ### Publishing the Application
-1. Right-click on GreetingsService project
+1. Right-click on GreetingsConsole project
 2. Select "Publish"
 3. Choose "Folder" as the target
 4. Configure output folder

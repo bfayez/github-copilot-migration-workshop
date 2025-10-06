@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{2F6D4B8C-9E7A-4D5C-8B3F-1A2C3D4E5F6A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>GreetingsService</RootNamespace>
-    <AssemblyName>GreetingsService</AssemblyName>
+    <RootNamespace>GreetingsConsole</RootNamespace>
+    <AssemblyName>GreetingsConsole</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
