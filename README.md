@@ -1,23 +1,22 @@
-# Migration Workshop - Demo Application
+# GitHub Copilot Migration Workshop - Sample Application
 
-This repository contains a demonstration application consisting of two .NET Framework 4.8.1 projects that work together to showcase REST API communication.
+This repository contains a sample .NET Framework 4.8.1 application that will be used for the **GitHub Copilot Migration Workshop**. The workshop demonstrates how to use GitHub Copilot to modernize and migrate legacy applications to modern cloud-native architectures.
 
 ## Overview
 
-The solution includes two applications:
+This is a demonstration application consisting of two .NET Framework 4.8.1 projects that work together to showcase REST API communication. This application serves as the starting point for learning how to leverage GitHub Copilot for application modernization and cloud migration.
+
+### Application Components
 
 1. **MessageService** - A REST API service that returns timestamped greeting messages
 2. **GreetingsConsole** - A console application that calls the MessageService and displays the results
 
 ## Architecture
 
-```
-┌─────────────────────┐          HTTP GET          ┌──────────────────┐
-│  GreetingsConsole   │ ───────────────────────>  │  MessageService  │
-│  (Console App)      │                            │  (REST API)      │
-│                     │ <─────────────────────────  │                  │
-└─────────────────────┘    JSON Response          └──────────────────┘
-                           (Timestamped Message)
+```mermaid
+graph LR
+    A[GreetingsConsole<br/>Console App] -->|HTTP GET| B[MessageService<br/>REST API]
+    B -->|JSON Response<br/>Timestamped Message| A
 ```
 
 ## Technology Stack
@@ -35,6 +34,20 @@ The solution includes two applications:
 - **Visual Studio 2022** (recommended) or **Visual Studio 2019**
   - Workload: ASP.NET and web development
   - Workload: .NET desktop development
+
+## Getting Started
+
+### Fork the Repository
+
+Before you begin, fork this repository to your own GitHub account:
+
+1. Click the **Fork** button at the top right of this repository page
+2. Select your GitHub account as the destination
+3. Wait for the fork to complete
+4. Clone your forked repository to your local machine:
+   ```bash
+   git clone https://github.com/YOUR-USERNAME/github-copilot-migration-workshop.git
+   ```
 
 ## Quick Start with Visual Studio
 
@@ -149,6 +162,28 @@ http://localhost:5000/api/message
 Invoke-RestMethod -Uri http://localhost:5000/api/message
 ```
 
+---
+
+## Next Steps: Migration Workshop
+
+Now that you have the current application running, you're ready to begin the migration workshop!
+
+The migration workshop will guide you through using **GitHub Copilot** to modernize this legacy .NET Framework application and migrate it to a modern cloud-native architecture on Azure.
+
+### Start the Migration
+
+📂 **Go to the [Migration](./Migration) folder** to begin the workshop.
+
+The Migration folder contains step-by-step instructions that will teach you how to:
+- Use GitHub Copilot as an autonomous team member
+- Assess modernization options for legacy applications
+- Implement cloud-native architectures
+- Deploy to Azure using modern DevOps practices
+
+**Begin here:** [Migration/README.md](./Migration/README.md)
+
+---
+
 ## Naming Conventions
 
 This project follows .NET naming conventions:
@@ -196,11 +231,14 @@ See individual project READMEs for detailed information:
 
 ## Notes
 
-- This solution uses **.NET Framework 4.8.1** as requested
-- Requires Windows operating system
+- This solution uses **.NET Framework 4.8.1** as the starting point for the migration workshop
+- Requires Windows operating system for running the current .NET Framework application
 - Best developed and tested using Visual Studio on Windows
-- For production deployment, consider hosting MessageService on IIS or Azure App Service
+- This is a sample application designed for the **GitHub Copilot Migration Workshop**
+- After running the application, proceed to the [Migration](./Migration) folder for the workshop instructions
 
-## License
+## About This Workshop
 
-This is a demonstration project for the GitHub Copilot Migration Workshop.
+This is a demonstration project for the **GitHub Copilot Migration Workshop**. The workshop teaches you how to use GitHub Copilot to modernize legacy applications and migrate them to modern cloud platforms.
+
+To start the workshop, see the [Migration](./Migration) folder.
