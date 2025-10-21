@@ -54,12 +54,12 @@ GitHub Copilot can also work as an autonomous team member that you can assign ta
 You're working with a legacy .NET Framework 4.8.1 application that consists of:
 
 ### Architecture
-```
-┌─────────────────────┐          HTTP GET          ┌──────────────────┐
-│  GreetingsConsole   │ ───────────────────────>  │  MessageService  │
-│  (Console App)      │                            │  (REST API)      │
-│                     │ <─────────────────────────  │                  │
-└─────────────────────┘    JSON Response          └──────────────────┘
+```mermaid
+sequenceDiagram
+    participant Console as GreetingsConsole<br/>(Console App)
+    participant API as MessageService<br/>(REST API)
+    Console->>API: HTTP GET /api/message
+    API-->>Console: JSON Response
 ```
 
 ### Components
