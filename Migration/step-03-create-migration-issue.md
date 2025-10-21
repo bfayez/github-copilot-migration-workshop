@@ -182,21 +182,20 @@ Consider adding:
 After submitting the migration issue:
 
 ### Copilot's Workflow
-1. **Analysis** (1-2 minutes)
-   - Copilot analyzes the current codebase
-   - Reviews the assessment recommendations
-   - Plans the migration approach
 
-2. **Implementation** (5-15 minutes)
-   - Creates migrated code
-   - Updates or creates new project files
-   - Adds configuration files
-   - Writes documentation
-
-3. **Pull Request Creation**
-   - Copilot creates a PR with all changes
-   - Links the PR to the issue
-   - Adds description of changes made
+```mermaid
+flowchart LR
+    A[Analysis<br/>1-2 minutes] --> B[Implementation<br/>5-15 minutes]
+    B --> C[Pull Request<br/>Creation]
+    
+    A1[Analyze codebase<br/>Review recommendations<br/>Plan approach] -.-> A
+    B1[Create migrated code<br/>Update project files<br/>Add configuration<br/>Write documentation] -.-> B
+    C1[Create PR<br/>Link to issue<br/>Add description] -.-> C
+    
+    style A fill:#fff4e6
+    style B fill:#e3f2fd
+    style C fill:#e8f5e9
+```
 
 ### You'll Know It's Done When:
 - [ ] You receive a GitHub notification
