@@ -54,12 +54,12 @@ GitHub Copilot can also work as an autonomous team member that you can assign ta
 You're working with a legacy .NET Framework 4.8.1 application that consists of:
 
 ### Architecture
-```
-┌─────────────────────┐          HTTP GET          ┌──────────────────┐
-│  GreetingsConsole   │ ───────────────────────>  │  MessageService  │
-│  (Console App)      │                            │  (REST API)      │
-│                     │ <─────────────────────────  │                  │
-└─────────────────────┘    JSON Response          └──────────────────┘
+```mermaid
+sequenceDiagram
+    participant Console as GreetingsConsole<br/>(Console App)
+    participant API as MessageService<br/>(REST API)
+    Console->>API: HTTP GET /api/message
+    API-->>Console: JSON Response
 ```
 
 ### Components
@@ -101,13 +101,17 @@ By the end of this workshop, you will:
 
 The workshop is divided into the following steps:
 
-1. **Step 0** (Current): Introduction to GitHub Copilot ← YOU ARE HERE
-2. **Step 1**: Create an assessment issue for Copilot to analyze and recommend modernization options
-3. **Step 2**: Review Copilot's assessment and recommendations
-4. **Step 3**: Create a migration issue for Copilot to implement the recommended approach
-5. **Step 4**: Review the migration work completed by Copilot
-6. **Step 5**: Test the migrated application locally using GitHub Codespaces
-7. **Step 6**: Deploy to Azure and set up CI/CD (optional)
+```mermaid
+flowchart TD
+    A[Step 0: Introduction to GitHub Copilot<br/>YOU ARE HERE] --> B[Step 1: Create Assessment Issue]
+    B --> C[Step 2: Review Copilot's Assessment]
+    C --> D[Step 3: Create Migration Issue]
+    D --> E[Step 4: Review Migration Work]
+    E --> F[Step 5: Local Testing in Codespaces]
+    F --> G[Step 6: Deploy to Azure & CI/CD]
+    
+    style A fill:#e1f5ff
+```
 
 ---
 
