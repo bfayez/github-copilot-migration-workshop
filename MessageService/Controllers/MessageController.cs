@@ -1,5 +1,5 @@
 using System;
-using System.Web.Http;
+using Microsoft.AspNetCore.Mvc;
 using MessageService.Models;
 
 namespace MessageService.Controllers
@@ -7,7 +7,9 @@ namespace MessageService.Controllers
     /// <summary>
     /// Controller for message-related endpoints
     /// </summary>
-    public class MessageController : ApiController
+    [ApiController]
+    [Route("api/[controller]")]
+    public class MessageController : ControllerBase
     {
         /// <summary>
         /// GET endpoint that returns a "Hello World" message with the current date and time prepended.
@@ -21,8 +23,7 @@ namespace MessageService.Controllers
         /// </remarks>
         /// <response code="200">Returns the greeting message with timestamp</response>
         [HttpGet]
-        [Route("api/message")]
-        public IHttpActionResult GetMessage()
+        public ActionResult<MessageResponse> GetMessage()
         {
             var timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             var message = $"{timestamp} - Hello World";
