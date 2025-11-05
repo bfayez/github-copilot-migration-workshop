@@ -2,6 +2,12 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <OutputType>Exe</OutputType>
+    <AssemblyTitle>GreetingsConsole</AssemblyTitle>
+    <Description>Console application that calls the MessageService REST API</Description>
+    <Product>GreetingsConsole</Product>
+    <Copyright>Copyright © 2025</Copyright>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
