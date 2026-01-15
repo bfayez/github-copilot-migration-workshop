@@ -49,6 +49,45 @@ The exact steps depend on the migration approach. Follow the deployment guide fr
 
 #### General Deployment Flow
 
+```mermaid
+flowchart TD
+    A[Prepare Azure Environment] --> A1[Login to Azure]
+    A1 --> A2[Set Subscription]
+    A2 --> A3[Create Resource Group]
+    
+    A3 --> B[Deploy Infrastructure]
+    B --> B1{Deployment Method?}
+    B1 -->|Bicep/ARM| B2[Deploy Templates]
+    B1 -->|Manual| B3[Create Resources Manually]
+    
+    B2 --> C[Deploy Application Code]
+    B3 --> C
+    
+    C --> C1{Application Type?}
+    C1 -->|Azure Functions| C2[Publish Functions]
+    C1 -->|App Service| C3[Deploy Web App]
+    C1 -->|Containers| C4[Push & Deploy Containers]
+    
+    C2 --> D[Configure Settings]
+    C3 --> D
+    C4 --> D
+    
+    D --> D1[Set Environment Variables]
+    D1 --> D2[Configure Connection Strings]
+    D2 --> D3[Set API URLs]
+    
+    D3 --> E[Verify Deployment]
+    E --> E1[Test API Endpoint]
+    E1 --> E2[Check Logs]
+    E2 --> E3[Verify Scheduled Task]
+    
+    style A fill:#e3f2fd
+    style B fill:#fff4e6
+    style C fill:#f3e5f5
+    style D fill:#e8f5e9
+    style E fill:#fce4ec
+```
+
 ##### 1. Prepare Azure Environment
 
 - [ ] **Login to Azure**
@@ -223,6 +262,27 @@ Follow the specific commands from the deployment guide for:
 Use this option for automated, production-ready deployment.
 
 ### Step-by-Step CI/CD Setup
+
+```mermaid
+flowchart TD
+    A[Create CI/CD Issue] --> B[Assign to @copilot]
+    B --> C[Wait for Copilot<br/>5-15 minutes]
+    C --> D[Review CI/CD PR]
+    D --> E[Configure GitHub Secrets]
+    E --> F[Merge CI/CD PR]
+    F --> G[Monitor First Deployment]
+    G --> H[Verify Deployment]
+    
+    C1[Workflow file<br/>Infrastructure code<br/>Documentation] -.-> C
+    E1[AZURE_CREDENTIALS<br/>AZURE_SUBSCRIPTION_ID<br/>Resource names] -.-> E
+    H1[Check Azure Portal<br/>Test API<br/>Verify scheduled task] -.-> H
+    
+    style A fill:#e3f2fd
+    style C fill:#fff4e6
+    style E fill:#fce4ec
+    style F fill:#e8f5e9
+    style H fill:#f3e5f5
+```
 
 #### 1. Create CI/CD Issue for Copilot
 
